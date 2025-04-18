@@ -1,5 +1,3 @@
-🌌 NPTEL Cloud Computing Week 3: Cheatsheet 📋
-Quick-fire revision for Week 3 of NPTEL Cloud Computing, tailored for the 100-MCQ exam on May 3, 2025. Covers SLAs, OpenStack components, and storage concepts from WEEK 3_watermark.pdf. Pair with week3_explanation.md for deep dives. GitHub-ready with emojis for max clarity! 🚀
 
 📜 1. Service Level Agreement (SLA) 🤝
 
