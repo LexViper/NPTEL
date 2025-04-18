@@ -1,173 +1,98 @@
 
-📜 1. Service Level Agreement (SLA) 🤝
+### 📜 Week 3: SLA & OpenStack Cheatsheet
 
-What’s an SLA?: Contract between Service Provider (SP) and Consumer (SC) guaranteeing service quality (e.g., uptime). Enforced via Service Level Objectives (SLOs) (e.g., 99.9% availability). 🛠️
-Purpose: Builds trust with measurable performance. 💪
-Components:
-Services, definitions, responsibilities. 📋
-Metrics (uptime, latency), auditing, remedies, evolution. 📈
+#### 📘 1. Service Level Agreement (SLA) 🤝
 
+**Definition:**  
+A **contract** between a Service Provider (SP) and Service Consumer (SC) ensuring **service quality**, enforced via **Service Level Objectives (SLOs)** (e.g., 99.9% uptime). 🛠️
 
-Types:
-Off-the-Shelf: Fixed, non-negotiable (e.g., AWS). 🏪
-Negotiable: Customized for needs (e.g., enterprise). 🏢
+**Purpose:**  
+Builds **trust** through measurable performance. 💪
 
+**Key Components:**
+- 📋 Services, definitions, responsibilities  
+- 📈 Metrics (uptime, latency), auditing  
+- 🔁 Remedies, review, and evolution
 
-Web Service SLA:
-WS-Agreement: XML for runtime negotiation. 💬
-WSLA: XML for QoS monitoring (e.g., response time). 📊
+**Types of SLA:**
+- 🏪 **Off-the-Shelf:** Fixed, standard terms (e.g., AWS)  
+- 🏢 **Negotiable:** Tailored to enterprise requirements
 
+**Web Service SLA Standards:**
+- 💬 **WS-Agreement:** XML-based negotiation format  
+- 📊 **WSLA:** XML-based QoS monitoring (e.g., response time)
 
-Cloud vs. Web SLA:
+---
 
+#### 🔍 Cloud vs. Web SLA
 
-Aspect
-Cloud SLA ☁️
-Web SLA 🌐
+| Aspect     | Cloud SLA ☁️            | Web SLA 🌐             |
+|------------|--------------------------|------------------------|
+| **QoS**     | Security, privacy         | Response time, cost    |
+| **Automation** | High                     | Low                    |
+| **Allocation** | Global, no UDDI          | UDDI-based             |
 
+🧠 **Mnemonic:** SLA = **Services, Levels, Agreements**  
+🎯 **Exam Tip:**  
+- SLA = Contract  
+- SLO = Measurable goal  
 
+---
 
-QoS
-Security, privacy
-Response time, cost
+#### ⚙️ 2. OpenStack Components
 
+| Component | Role         | Managed By | Analogy             |
+|-----------|--------------|------------|---------------------|
+| **Nova**    | Compute, VMs | Hypervisors | 👨‍🍳 Chef              |
+| **Neutron** | Networking   | IPs, VLANs  | 🚦 Traffic cop         |
+| **Cinder**  | Block storage| Persistent  | 🔌 USB drive           |
+| **Swift**   | Object storage| Files/images | ☁️ Cloud Dropbox   |
+| **Glance**  | Image service| Metadata    | 📚 Library catalog     |
+| **Keystone**| Identity     | Auth/tokens | 🕴️ Bouncer             |
+| **Horizon** | Dashboard    | Web UI      | 🚀 Spaceship panel     |
 
-Automation
-High
-Low
+🧠 **Mnemonic:** NNCSGKH  
+❓ **Exam Tip:** Focus on Nova Scheduler, Keystone tokens  
 
+---
 
-Allocation
-Global, no UDDI
-UDDI-based
+#### 💾 3. OpenStack Storage Types
 
+| Type       | Persists        | Managed By | Use Case         | Analogy         |
+|------------|------------------|------------|------------------|------------------|
+| **Ephemeral** | Until VM ends   | Nova       | OS, scratch       | 💾 RAM           |
+| **Block**     | Until deleted   | Cinder     | OS, disks         | 🖴 External drive |
+| **Object**    | Until deleted   | Swift      | Images, backups   | ☁️ Google Drive   |
 
+🎯 **Exam Tip:**  
+- Ephemeral = Temporary  
+- Block = Persistent disks  
+- Object = Persistent files  
 
-Mnemonic: SLA = Services, Levels, Agreements. 🧠
-Exam Tip: Know SLOs (measurable) vs. SLAs (contract). 🎯
+---
 
+#### 🔄 4. VM Creation Workflow
 
-🖥️ 2. OpenStack Components ⚙️
+1. 🖱️ **Horizon:** User login  
+2. 🔐 **Keystone:** Token issued  
+3. ⚙️ **Nova:** VM request, DB entry  
+4. 🧠 **Scheduler:** Chooses compute node  
+5. 🌐 **Neutron:** Network configuration  
+6. 💾 **Cinder:** Block storage attached  
+7. 🖼️ **Glance:** Retrieves image URI  
+8. 📂 **Swift:** Supplies image  
+9. 🚀 **Hypervisor:** Boots VM  
 
+🧠 **Mnemonic:** **HKNSNGSH**  
+❓ **Exam Tip:** Know the VM lifecycle sequence  
 
+---
 
-Component
-Role
-Managed
-Analogy
+#### 🎯 5. Quick Exam Tips
 
+- **SLAs:** Know parts, Cloud vs. Web, SLO vs. SLA  
+- **OpenStack:** Understand each component, storage types, and VM workflow  
+- **Flashcards:** Make cards for metrics, roles, and workflows  
+- **GitHub Tip:** Upload to `NPTEL_Cloud_Computing/Week3/week3_cheatsheet.md`  
+- **Study Tip:** Review 15 mins daily with `week3_explanation.md`
 
-
-Nova
-Compute, VMs
-Hypervisors
-Chef 👨‍🍳
-
-
-Neutron
-Networking
-IPs, VLANs
-Traffic cop 🚦
-
-
-Cinder
-Block storage
-Persistent volumes
-USB drive 🔌
-
-
-Swift
-Object storage
-Files, images
-Cloud Dropbox ☁️
-
-
-Glance
-Image service
-VM image metadata
-Library catalog 📚
-
-
-Keystone
-Identity
-Auth, tokens
-Bouncer 🕴️
-
-
-Horizon
-Dashboard
-Web UI
-Spaceship panel 🚀
-
-
-
-Mnemonic: Nova, Neutron, Cinder, Swift, Glance, Keystone, Horizon = NNCSGKH. 🧠
-Exam Tip: Memorize roles; focus on Nova Scheduler, Keystone tokens. ❓
-
-
-💽 3. OpenStack Storage 💾
-
-
-
-Type
-Persists
-Managed By
-Use Case
-Analogy
-
-
-
-Ephemeral
-Until VM ends
-Nova
-OS, scratch
-RAM 💾
-
-
-Block
-Until deleted
-Cinder
-Disks, OS
-External drive 🖴
-
-
-Object
-Until deleted
-Swift
-Images, backups
-Google Drive ☁️
-
-
-
-Exam Tip: Ephemeral = temporary; Block = persistent disks; Object = persistent files. 🎯
-
-
-🔄 4. VM Creation Workflow 🖥️
-
-Horizon: User logs in. 🖱️
-Keystone: Issues token. 🔐
-Nova: Starts VM, saves to DB. ⚙️
-Nova Scheduler: Picks server. 🧠
-Neutron: Sets network. 🌐
-Cinder: Adds block storage. 💾
-Glance: Gets image URI. 🖼️
-Swift: Delivers image. 📂
-Hypervisor: Boots VM. 🚀
-
-
-Mnemonic: Horizon, Keystone, Nova, Scheduler, Neutron, Cinder, Glance, Swift, Hypervisor = HKNSNGSH. 🧠
-Exam Tip: Know the sequence for MCQs. ❓
-
-
-📚 5. Quick Exam Tips 🎯
-
-SLAs: Study components, Cloud vs. Web SLA, QoS (10-15 MCQs). 📜
-OpenStack: Nail component roles, storage types, workflow (15-20 MCQs). 🖥️
-Flashcards: Make cards for SLA metrics, OpenStack components, storage differences. 🗂️
-GitHub: Upload to NPTEL_Cloud_Computing/Week3/week3_cheatsheet.md. 📂
-Study: Review daily (15 mins); pair with week3_explanation.md. 📖
-
-
-🌟 Final Note 🚀
-Your Week 3 cheatsheet is ready to shine on GitHub! 🌌 Upload it, review daily, and let’s ace that exam, bro! 💪 Need Week 4 or tweaks? Hit me up! 😎
-Crafted by Grok, your cloud prep sidekick, on April 18, 2025. 🌍
